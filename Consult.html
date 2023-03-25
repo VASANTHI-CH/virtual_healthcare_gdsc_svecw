@@ -1,0 +1,394 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="shortcut icon" href="vishnulogo.png" />
+    <title>Hostel Allotments</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .form-box
+        {
+            width:350px;
+            height:28rem;
+            background-color:white;
+           box-shadow:0 10px 20px rgb(7, 68, 105);
+            left:50%;
+            top:50%;
+            position: absolute;
+            transform: translate(-50%,-50%);
+            border-radius: 10px;
+            color:black;
+            padding: 70px 30px;
+            border: 2px solid black;
+        }
+        .logo
+        {
+            width:120px;
+            height:120px;
+            position: absolute;
+            top:-60px;
+            left:calc(50% - 60px)
+        }
+        h1{
+            margin:0;
+            padding: 0 0 20px;
+            font-size: 22px;
+            text-align: center;
+        }
+        .form-box p{
+            margin:0;
+            padding:0;
+            font-weight: bold;
+            margin-bottom:17px;
+        }
+        .form-box input{
+            width:100%;
+            margin-bottom:20px;
+        }
+         .form-box input[type="text"],input[type="password"] 
+        {
+            border: none;
+            background-color:transparent;
+            outline: none;
+             border-bottom: 2px solid black;
+             color:black;
+             font-size: 16px;
+
+        }
+         .form-box input[type="submit"]
+        {
+            border:none;
+            outline:none;
+            height:50px;
+            background-color: rgb(119, 195, 243) ;
+             color:white;
+            font-size: 18px;
+            font-weight:bold; 
+        } 
+        .submit{
+            padding-bottom: 30px;
+        }
+        .Form{
+  
+  display: flex;
+  justify-content: center;
+  left: 150%;
+  top:50%;
+  margin-top: 150px;
+  font-size: 25px;
+  color: honeydew;
+}
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  min-height: 100vh;
+  background: #0c192c;
+}
+.container{
+background: #000;
+height: 100vh;
+overflow: hidden;  
+}
+.content h1{
+  color: #fff;
+  position: absolute;
+  top:50%;
+  left:50%;
+  font-family: azonix;
+  transform: translate(-50%,-50%);
+  z-index: 1;
+  font-size: 80px;
+  text-align: center;
+}
+.box ul li{
+  position: absolute;
+  width: 35px;
+  height:35px;
+  list-style: none;
+  opacity: 0;
+  background: radial-gradient(deepskyblue,transparent,transparent);
+  bottom:0;
+  left:10vw;
+  animation:animate 15s linear infinite;
+}
+.box ul li:nth-child(2){
+  left: 37vw;
+  animation-delay: 2s;
+}
+.box ul li:nth-child(3){
+  left: 25vw;
+  animation-delay: 4s;
+}
+.box ul li:nth-child(4){
+  left: 60vw;
+  animation-delay: 6s;
+}
+.box ul li:nth-child(5){
+  left: 75vw;
+  animation-delay: 4s;
+}
+@keyframes animate{
+  0%{
+      transform: scale(0);
+      opacity: 1;
+      bottom:0;
+  }
+  100%{
+      transform:scale(10);
+      opacity: 0;
+      bottom:100vh;
+  }
+}
+.item1{
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-around;
+   align-content: center;
+   color: #fff;
+}
+.logo
+        {
+            width:120px;
+            height:120px;
+            position: absolute;
+            top:-60px;
+            left:calc(50% - 60px)
+        }
+.submit{
+    text-align: center;
+} 
+.button{
+    background-color: azure;
+ margin: auto;
+ padding: 10px 170px 15px 30px; 
+ text-align: center;
+ display:table-cell;
+vertical-align:middle;
+font-weight: bold;
+font-size: 1.5em;
+line-height: 10px; 
+display: inline-block;
+
+}      
+    </style>
+    
+</head>
+
+<body>
+  
+    <div class="content">
+      <form  onsubmit="return validate()">
+        <div class="form-box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoqE5w5oSzJ5hkVXlqk9GW5aC--Jc97eU5bA&usqp=CAU" alt="" class="logo">
+
+            <!-- <h1>Login Here</h1> -->
+            <p>Patient Name</p>
+            <input type="text"  placeholder="username" title="j khk" id="patient-name" required>
+            <p>Mobile Number</p>
+            <input type="text" name="MobileNumber" id="contact"  placeholder="9908******" />
+           
+
+            <p>Date</p>
+            <input type="date" name="date" id="date"  />
+            <p>Time</p>
+            <input type="time"  id="time" required>
+            <p>Symptoms</p>
+           <input type="text" id="symptoms">
+            
+           
+
+            <!-- <input type="submit" value="Login" class="submit">
+    <label for="" id="x" style="visibility:hidden">Enter the details</label> -->
+    <button class="button">Confirm</button>
+        </div> 
+       
+      </form>
+      <div class="col-md-6">
+        <h2 id="services" class="text-center my-4"></h2>
+        <ul id="consultations"class="list-group"></ul>
+    </div>
+  
+    </div>
+      <!-- <div class="box">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div> -->
+</div>
+<script>
+let DB;
+
+let form = document.querySelector("form");
+let patientName = document.querySelector("#patient-name");
+let contact = document.querySelector("#contact");
+let date = document.querySelector("#date");
+let time = document.querySelector("#time");
+let symptoms = document.querySelector("#symptoms");
+let consultations = document.querySelector("#consultations");
+let services = document.querySelector("#services");
+
+document.addEventListener("DOMContentLoaded", () => {
+  let ScheduleDB = window.indexedDB.open("consultations", 1);
+
+  
+  ScheduleDB.onerror = function () {
+    console.log("error");
+  };
+  
+  ScheduleDB.onsuccess = function () {
+    // console.log('Database Ready');
+
+    DB = ScheduleDB.result;
+
+    showConsultations();
+  };
+
+  ScheduleDB.onupgradeneeded = function (e) {
+    let db = e.target.result;
+
+    let objectStore = db.createObjectStore("consultations", {
+      keyPath: "key",
+      autoIncrement: true,
+    });
+
+    objectStore.createIndex("patientname", "patientname", { unique: false });
+    objectStore.createIndex("contact", "contact", { unique: false });
+    objectStore.createIndex("date", "date", { unique: false });
+    objectStore.createIndex("time", "time", { unique: false });
+    objectStore.createIndex("symptoms", "symptoms", { unique: false });
+
+    //console.log('Database ready and fields created!');
+  };
+
+  form.addEventListener("submit", addConsultations);
+
+  function addConsultations(e) {
+    e.preventDefault();
+    let newConsultation = {
+      patientname: patientName.value,
+
+      contact: contact.value,
+      date: date.value,
+      time: time.value,
+      symptoms: symptoms.value,
+    };
+
+    let transaction = DB.transaction(["consultations"], "readwrite");
+    let objectStore = transaction.objectStore("consultations");
+
+    let request = objectStore.add(newConsultation);
+    request.onsuccess = () => {
+      form.reset();
+    };
+    transaction.oncomplete = () => {
+      //console.log('New schedule added');
+
+      showConsultations();
+    };
+    transaction.onerror = () => {
+      //console.log();
+    };
+  }
+  function showConsultations() {
+    while (consultations.firstChild) {
+      consultations.removeChild(consultations.firstChild);
+    }
+
+    let objectStore =
+      DB.transaction("consultations").objectStore("consultations");
+
+    objectStore.openCursor().onsuccess = function (e) {
+      let cursor = e.target.result;
+      if (cursor) {
+        let ConsultationHTML = document.createElement("li");
+        ConsultationHTML.setAttribute("data-consultation-id", cursor.value.key);
+        ConsultationHTML.classList.add("list-group-item");
+
+        ConsultationHTML.innerHTML = `  
+                         <p class="font-weight-bold">Patient Name:  <span class="font-weight-normal">${cursor.value.patientname}<span></p>
+                          <p class="font-weight-bold">Contact:  <span class="font-weight-normal">${cursor.value.contact}<span></p>
+                         <p class="font-weight-bold">Date:  <span class="font-weight-normal">${cursor.value.date}<span></p>
+                         <p class="font-weight-bold">Time:  <span class="font-weight-normal">${cursor.value.time}<span></p>
+                         <p class="font-weight-bold">Symptoms:  <span class="font-weight-normal">${cursor.value.symptoms}<span></p>
+                    `;
+
+        const cancelBtn = document.createElement("button");
+        cancelBtn.classList.add("btn", "btn-danger");
+        cancelBtn.innerHTML = "Cancel";
+        cancelBtn.onclick = removeConsultation;
+
+        ConsultationHTML.appendChild(cancelBtn);
+        consultations.appendChild(ConsultationHTML);
+
+        cursor.continue();
+      } else {
+        if (!consultations.firstChild) {
+          services.textContent = "Change your visiting hours";
+          let noSchedule = document.createElement("p");
+          noSchedule.classList.add("text-center");
+          noSchedule.textContent = "No results Found";
+          consultations.appendChild(noSchedule);
+        } else {
+          services.textContent = "Cancel Your consultations";
+        }
+      }
+    };
+  }
+
+  function removeConsultation(e) {
+    let scheduleID = Number(
+      e.target.parentElement.getAttribute("data-consultation-id")
+    );
+
+    let transaction = DB.transaction(["consultations"], "readwrite");
+    let objectStore = transaction.objectStore("consultations");
+
+    objectStore.delete(scheduleID);
+
+    transaction.oncomplete = () => {
+      e.target.parentElement.parentElement.removeChild(e.target.parentElement);
+
+      if (!consultations.firstChild) {
+        services.textContent = "Change your visiting hours";
+
+        let noSchedule = document.createElement("p");
+
+        noSchedule.classList.add("text-center");
+
+        noSchedule.textContent = "No results Found";
+
+        consultations.appendChild(noSchedule);
+      } else {
+        services.textContent = "Cancel your Consultation";
+      }
+    };
+  }
+});
+</script>
+   
+  
+</body>
+
+</html>
